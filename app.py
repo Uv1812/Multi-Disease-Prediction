@@ -5,14 +5,18 @@ Created on Sun Aug  3 11:30:43 2025
 @author: Admin
 """
 
-import pickle 
+import pickle
 import numpy as np
 import streamlit as st
 from streamlit_option_menu import option_menu
+import os
 
-dia_mod=pickle.load(open(r"D:\ML\web file\model\diabetes_model.sav",'rb'))
-ht_mod=pickle.load(open(r"D:\ML\web file\model\heart_model.sav",'rb'))
-par_mod=pickle.load(open(r"D:\ML\web file\model\parkinson_pre.sav",'rb'))
+# ✅ Relative paths — works locally and on Streamlit Cloud
+base = os.path.dirname(__file__)
+
+dia_mod = pickle.load(open(os.path.join(base, "model", "diabetes_model.sav"), 'rb'))
+ht_mod  = pickle.load(open(os.path.join(base, "model", "heart_model.sav"), 'rb'))
+par_mod = pickle.load(open(os.path.join(base, "model", "parkinson_pre.sav"), 'rb'))
 
 
 with st.sidebar:
