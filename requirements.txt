@@ -3,4 +3,3 @@ pickle-mixin
 streamlit
 streamlit-option-menu
 scikit-learn
-pillow
